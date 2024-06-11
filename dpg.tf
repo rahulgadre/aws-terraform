@@ -1,6 +1,6 @@
 provider "vsphere" {
   user           = "administrator@vsphere.local"  
-  password       = "Avaya123$"
+  password       = "PWD"
   vsphere_server = "mainpod-vcenter.acp.avaya.com"
 
   # If you have a self-signed cert
