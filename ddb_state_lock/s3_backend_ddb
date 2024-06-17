@@ -1,0 +1,13 @@
+terraform {
+  backend "s3" {
+    region = "us-west-2"
+    bucket = "rgg-terraform-bucket"
+    key    = "prod/terraform.tfstate"
+    dynamodb_table = "DynamoDB"
+  }
+}
+
+provider "aws" {
+  shared_config_files      = ["/home/$USER/.aws/conf"]
+  shared_credentials_files = ["/home/$USER/.aws/creds"]
+}
