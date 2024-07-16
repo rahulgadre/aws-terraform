@@ -56,14 +56,6 @@ resource "aws_subnet" "public" {
   
 }
 
-# data "aws_route_table" "rt" {
-#    subnet_id = aws_subnet.public.id
-#   }
-
-# output "route_table_id" {
-#   value = data.aws_route_table.rt.id
-# }
-
 # Adding a default route to a new IGW
 
 resource "aws_route" "pub_rt" {
@@ -81,7 +73,6 @@ resource "aws_internet_gateway" "pub_igw" {
     Name = "my terra pub igw"
   }
 }
-
 
 # A new private subnet in a new VPC
 resource "aws_subnet" "private" {
@@ -114,4 +105,3 @@ output "subnet_id" {
   value = aws_subnet.public.id
   
 }
-  
